@@ -1,3 +1,5 @@
+// Primitive Types
+
 // Boolean ( true / false )
 let isOpen: boolean
 isOpen = true
@@ -94,3 +96,41 @@ function renderPlatform(platform : Platform) {
   return platform
 }
 renderPlatform('Linux')
+
+
+
+
+
+// Type Aliases com Intersection
+type AccountInfo = {
+  id: number
+  name: string
+  email?: string
+}
+
+const account : AccountInfo = {
+  id: 123,
+  name: 'Lincoln',
+  // email: 'lincoln@lincoln.com.br' por conta da interrogação o email se torna opcional
+}
+
+type CharInfo = {
+  nickname: string;
+  level: number
+}
+
+const char: CharInfo = {
+  nickname: 'Roquis',
+  level: 30
+}
+
+// Type Intersection
+type PlayerInfo = AccountInfo & CharInfo
+
+const player: PlayerInfo = {
+  id: 123,
+  name: 'Lincoln',
+  email: 'lincoln@lincoln.com.br',
+  nickname: 'Roquis',
+  level: 30
+}
