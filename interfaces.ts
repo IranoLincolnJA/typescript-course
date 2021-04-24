@@ -51,3 +51,8 @@ class CreateGame implements GameProps {
     this.genre = g
   }
 }
+
+/* Vantagens de se usar Interfaces
+  -> Em criações de libs, facilitam pois são mais extensíceis
+  -> Quanto trabalhar com POO ( Programação Orientada a Objetos )
+*/

@@ -134,3 +134,12 @@ const player: PlayerInfo = {
   nickname: 'Roquis',
   level: 30
 }
+
+/* Vantagens de se usar Types
+  -> Mais simples de usar
+  -> Para extender classes usa apenas um simbolo ( & )
+  -> Mais simples de agregar propriedades, fazer uniões
+  -> Facilidade a trabalhar com tipos primitidos
+  -> Recomendado utilizar na maioria das vezes
+  -> Types -> Props
+*/
