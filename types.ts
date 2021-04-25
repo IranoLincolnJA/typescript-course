@@ -143,3 +143,42 @@ const player: PlayerInfo = {
   -> Recomendado utilizar na maioria das vezes
   -> Types -> Props
 */
+
+
+
+
+
+// Type Utilities
+type Todo = {
+  title: string
+  description: string
+  completed: boolean
+}
+
+// Para que não faça mutações para tribuir novos valores, utilizar os Utilities
+// Readonly
+const todo: Readonly<Todo> = {
+  title: 'Assistir The Blacklist novamente',
+  description: 'Relembrar os detalhes para a nova temporada',
+  completed: false
+}
+console.log(todo)
+// todo.completed = true
+
+// Para fazer a mudança do objeto fazer isso com um função
+function updateTodo(todo: Todo, fieldsToUpdate: Partial<Todo>) {
+  return { ...todo, ...fieldsToUpdate }
+}
+
+const todoUpdated: Todo = updateTodo(todo, { completed: true })
+
+// Pick -> usado para pegar apenas algumas coisas do type
+type TodoPreview = Pick<Todo, 'title' | 'completed'>
+
+const todoPick: TodoPreview = {
+  title: 'Fechar Ghost of Tsushima',
+  completed: false
+}
+
+// Omit -> Omit o que queremos passar
+type todoOmit = Omit<Todo, 'description'>
